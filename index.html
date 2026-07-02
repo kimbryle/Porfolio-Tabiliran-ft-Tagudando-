@@ -72,15 +72,15 @@ button{
     cursor:pointer;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
     <h1>Personal Portfolio Website</h1>
 </header>
 
-<!-- LOGIN -->
+<!-- LOGIN PAGE -->
 <div class="login-box" id="loginPage">
     <h2>Login First</h2>
     <input type="text" id="username" placeholder="Username">
@@ -88,7 +88,7 @@ button{
     <button onclick="login()">Login</button>
 </div>
 
-<!-- PORTFOLIOS -->
+<!-- PORTFOLIO PAGE -->
 <div id="portfolioPage" style="display:none;">
 
 <nav>
@@ -96,14 +96,17 @@ button{
     <a onclick="showPortfolio('portfolio2')">Portfolio 2</a>
 </nav>
 
-<!-- Portfolio 1 -->
+<!-- PORTFOLIO 1 -->
 <section id="portfolio1">
 
 <h2>Profile</h2>
 <img src="1751348694577.jpg" alt="Kim Bryle">
 <h3>Kim Bryle P. Tabiliran</h3>
 <p><b>Course:</b> BS Information Technology</p>
-<p>I’m a BSIT student passionate about learning tech, building projects, and solving problems through coding, web development, and IT support.</p>
+<p>
+I’m a BSIT student passionate about learning tech, building projects, 
+and solving problems through coding, web development, and IT support.
+</p>
 
 <h2>Skills</h2>
 <ul>
@@ -154,14 +157,16 @@ button{
 
 </section>
 
-<!-- Portfolio 2 -->
+<!-- PORTFOLIO 2 -->
 <section id="portfolio2" style="display:none;">
 
 <h2>Profile</h2>
 <img src="arianne.png" alt="Arianne">
 <h3>Arianne P. Tagudando</h3>
 <p><b>Course:</b> BS Information Technology</p>
-<p>I enjoy editing photos and videos and creating templates on Canva.</p>
+<p>
+I enjoy editing photos and videos and creating templates on Canva.
+</p>
 
 <h2>Skills</h2>
 <ul>
@@ -213,229 +218,11 @@ button{
 </div>
 
 <script>
-function login(){
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-<!DOCTYPE html>
-<html>
-<head>
-<title>Personal Portfolio Website</title>
-
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f4f4f4;
-    margin:0;
-}
-
-header{
-    background:#333;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-nav{
-    background:#444;
-    text-align:center;
-    padding:10px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:15px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-section, .login-box{
-    width:80%;
-    margin:20px auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px gray;
-}
-
-img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-}
-
-.project img{
-    width:200px;
-    height:120px;
-    border-radius:5px;
-}
-
-.project{
-    border:1px solid #ccc;
-    padding:10px;
-    margin:10px 0;
-}
-
-input, textarea{
-    width:95%;
-    padding:10px;
-    margin:10px 0;
-}
-
-button{
-    padding:10px 20px;
-    background:#333;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>Personal Portfolio Website</h1>
-</header>
-
-<!-- LOGIN -->
-<div class="login-box" id="loginPage">
-    <h2>Login First</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-</div>
-
-<!-- PORTFOLIOS -->
-<div id="portfolioPage" style="display:none;">
-
-<nav>
-    <a onclick="showPortfolio('portfolio1')">Portfolio 1</a>
-    <a onclick="showPortfolio('portfolio2')">Portfolio 2</a>
-</nav>
-
-<!-- Portfolio 1 -->
-<section id="portfolio1">
-
-<h2>Profile</h2>
-<img src="1751348694577.jpg" alt="Kim Bryle">
-<h3>Kim Bryle P. Tabiliran</h3>
-<p><b>Course:</b> BS Information Technology</p>
-<p>I’m a BSIT student passionate about learning tech, building projects, and solving problems through coding, web development, and IT support.</p>
-
-<h2>Skills</h2>
-<ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>Python</li>
-    <li>Communication</li>
-    <li>Video Editing</li>
-    <li>Boosting</li>
-</ul>
-
-<h2>Projects</h2>
-
-<div class="project">
-    <h4>Portfolio Website</h4>
-    <p>Personal portfolio using HTML and CSS.</p>
-    <img src="project1.jpg" alt="Project 1">
-    <p><b>Technologies:</b> HTML, CSS</p>
-</div>
-
-<div class="project">
-    <h4>Calculator</h4>
-    <p>Basic calculator using JavaScript.</p>
-    <img src="project2.jpg" alt="Project 2">
-    <p><b>Technologies:</b> HTML, CSS, JavaScript</p>
-</div>
-
-<div class="project">
-    <h4>Event Website</h4>
-    <p>A website for school event management.</p>
-    <img src="project3.jpg" alt="Project 3">
-    <p><b>Technologies:</b> HTML, CSS</p>
-</div>
-
-<h2>Contact</h2>
-<p>Email: tabilirankimbryle@email.com</p>
-<p>Phone: 09708715756</p>
-<p>Facebook: Bry Tabiliran</p>
-<p>GitHub: KimBryle</p>
-
-<h3>Contact Form</h3>
-<form action="mailto:tabilirankimbryle@email.com" method="post" enctype="text/plain">
-    <input type="text" name="Name" placeholder="Name" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <textarea name="Message" placeholder="Message" required></textarea>
-    <button type="submit">Submit</button>
-</form>
-
-</section>
-
-<!-- Portfolio 2 -->
-<section id="portfolio2" style="display:none;">
-
-<h2>Profile</h2>
-<img src="arianne.png" alt="Arianne">
-<h3>Arianne P. Tagudando</h3>
-<p><b>Course:</b> BS Information Technology</p>
-<p>I enjoy editing photos and videos and creating templates on Canva.</p>
-
-<h2>Skills</h2>
-<ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>SQL</li>
-    <li>Teamwork</li>
-</ul>
-
-<h2>Projects</h2>
-
-<div class="project">
-    <h4>Student Record</h4>
-    <p>Student information management project.</p>
-    <img src="project4.jpg" alt="Project 4">
-    <p><b>Technologies:</b> HTML, CSS, SQL</p>
-</div>
-
-<div class="project">
-    <h4>Online Quiz</h4>
-    <p>Quiz website using HTML, CSS, and JavaScript.</p>
-    <img src="project5.jpg" alt="Project 5">
-    <p><b>Technologies:</b> HTML, CSS, JavaScript</p>
-</div>
-
-<div class="project">
-    <h4>Photo Gallery Website</h4>
-    <p>A website for sharing and organizing edited photos.</p>
-    <img src="project6.jpg" alt="Project 6">
-    <p><b>Technologies:</b> HTML, CSS</p>
-</div>
-
-<h2>Contact</h2>
-<p>Email: ariannetagudando@gmail.com</p>
-<p>Phone: 09987654321</p>
-<p>Facebook: Arianne Tagudando</p>
-<p>GitHub: Arianne</p>
-
-<h3>Contact Form</h3>
-<form action="mailto:ariannetagudando@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="Name" placeholder="Name" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <textarea name="Message" placeholder="Message" required></textarea>
-    <button type="submit">Submit</button>
-</form>
-
-</section>
-
-</div>
-
-<script>
-function login(){
+function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
-    if(user === "admin" && pass === "1234"){
+    if(user === "admin" && pass === "1234") {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("portfolioPage").style.display = "block";
     } else {
@@ -443,24 +230,7 @@ function login(){
     }
 }
 
-function showPortfolio(id){
-    document.getElementById("portfolio1").style.display = "none";
-    document.getElementById("portfolio2").style.display = "none";
-    document.getElementById(id).style.display = "block";
-}
-</script>
-
-</body>
-</html>
-    if(user === "admin" && pass === "1234"){
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("portfolioPage").style.display = "block";
-    } else {
-        alert("Wrong username or password!");
-    }
-}
-
-function showPortfolio(id){
+function showPortfolio(id) {
     document.getElementById("portfolio1").style.display = "none";
     document.getElementById("portfolio2").style.display = "none";
     document.getElementById(id).style.display = "block";
