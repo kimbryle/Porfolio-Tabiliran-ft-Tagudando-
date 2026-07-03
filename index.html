@@ -1,246 +1,588 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Personal Portfolio Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kim Bryle - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f4f4f4;
-    margin:0;
-}
+        body {
+            color: #333;
+            background-color: #f5f5f5;
+        }
 
-header{
-    background:#333;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-nav{
-    background:#444;
-    text-align:center;
-    padding:10px;
-}
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:15px;
-    font-weight:bold;
-    cursor:pointer;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-section, .login-box{
-    width:80%;
-    margin:20px auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px gray;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-}
+        nav a:hover {
+            opacity: 0.8;
+        }
 
-.project img{
-    width:200px;
-    height:120px;
-    border-radius:5px;
-}
+        .portfolio-link {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
 
-.project{
-    border:1px solid #ccc;
-    padding:10px;
-    margin:10px 0;
-}
+        .portfolio-link:hover {
+            background: white;
+            color: #667eea;
+        }
 
-input, textarea{
-    width:95%;
-    padding:10px;
-    margin:10px 0;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-button{
-    padding:10px 20px;
-    background:#333;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-</style>
+        section {
+            padding: 80px 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 5px solid #667eea;
+        }
+
+        .profile-info h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .profile-info .course {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .profile-info p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #764ba2;
+            transform: translateY(-3px);
+        }
+
+        .skills-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+        }
+
+        .projects-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .project-content p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item i {
+            font-size: 30px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin-left: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .profile-section {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+
+            .profile-img {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Personal Portfolio Website</h1>
-</header>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                Portfolio
+            </div>
+            <nav>
+                <a href="index.html" style="color: #ffd700; font-weight: bold;">
+                    <i class="fas fa-user"></i> Kim Bryle
+                </a>
+                <a href="portfolio2.html" class="portfolio-link">
+                    <i class="fas fa-user-circle"></i> Arianne
+                </a>
+            </nav>
+        </div>
+    </header>
 
-<!-- LOGIN PAGE -->
-<div class="login-box" id="loginPage">
-    <h2>Login First</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-</div>
+    <section class="hero">
+        <div class="container">
+            <h1>Hello! I'm Kim Bryle</h1>
+            <p>BS Information Technology Student | Web Developer | Tech Enthusiast</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
 
-<!-- PORTFOLIO PAGE -->
-<div id="portfolioPage" style="display:none;">
+    <section>
+        <div class="container">
+            <div class="profile-section">
+                <img src="1751348694577.jpg" alt="Kim Bryle" class="profile-img">
+                <div class="profile-info">
+                    <h2>Kim Bryle P. Tabiliran</h2>
+                    <p class="course">🎓 BS Information Technology</p>
+                    <p>
+                        I'm a passionate BSIT student dedicated to learning cutting-edge technologies, 
+                        building innovative projects, and solving real-world problems through coding, 
+                        web development, and IT support. I love turning ideas into reality with clean, 
+                        efficient code.
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:tabilirankimbryle@email.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/kimbryle" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<nav>
-    <a onclick="showPortfolio('portfolio1')">Portfolio 1</a>
-    <a onclick="showPortfolio('portfolio2')">Portfolio 2</a>
-</nav>
+    <section>
+        <div class="container">
+            <div class="skills-section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                        <p>Semantic markup & structure</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                        <p>Responsive design & animations</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p>Interactive & dynamic features</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                        <p>Backend development</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-film"></i>
+                        <h3>Video Editing</h3>
+                        <p>Professional content creation</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Communication</h3>
+                        <p>Team collaboration & leadership</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Portfolio 1 -->
-<section id="portfolio1">
+    <section>
+        <div class="container">
+            <div class="projects-section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Portfolio Website</h3>
+                            <p>Personal portfolio website showcasing my skills, projects, and experience as a web developer.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
 
-<h2>Profile</h2>
-<img src="1751348694577.jpg" alt="Kim Bryle">
-<h3>Kim Bryle P. Tabiliran</h3>
-<p><b>Course:</b> BS Information Technology</p>
-<p>
-I’m a BSIT student passionate about learning tech, building projects,
-and solving problems through coding, web development, and IT support.
-</p>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Calculator Application</h3>
+                            <p>A functional calculator with interactive UI for basic arithmetic operations.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
 
-<h2>Skills</h2>
-<ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>Python</li>
-    <li>Communication</li>
-    <li>Video Editing</li>
-    <li>Boosting</li>
-</ul>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Event Management Website</h3>
+                            <p>A comprehensive website for managing and promoting school events with beautiful design.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>Projects</h2>
+    <section id="contact">
+        <div class="container">
+            <div class="contact-section">
+                <h2 class="section-title" style="color: white; margin-bottom: 30px;">Get In Touch</h2>
+                <p style="font-size: 18px; margin-bottom: 30px;">I'd love to hear from you! Feel free to reach out.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>Email</p>
+                        <a href="mailto:tabilirankimbryle@email.com">tabilirankimbryle@email.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>Phone</p>
+                        <a href="tel:+639708715756">+63 970 871 5756</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <p>Facebook</p>
+                        <a href="https://facebook.com/bry.tabiliran" target="_blank">Bry Tabiliran</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="project">
-    <h4>Portfolio Website</h4>
-    <p>Personal portfolio using HTML and CSS.</p>
-    <img src="project1.jpg" alt="Project 1">
-    <p><b>Technologies:</b> HTML, CSS</p>
-</div>
-
-<div class="project">
-    <h4>Calculator</h4>
-    <p>Basic calculator using JavaScript.</p>
-    <img src="project2.jpg" alt="Project 2">
-    <p><b>Technologies:</b> HTML, CSS, JavaScript</p>
-</div>
-
-<div class="project">
-    <h4>Event Website</h4>
-    <p>A website for school event management.</p>
-    <img src="project3.jpg" alt="Project 3">
-    <p><b>Technologies:</b> HTML, CSS</p>
-</div>
-
-<h2>Contact</h2>
-<p>Email: tabilirankimbryle@email.com</p>
-<p>Phone: 09708715756</p>
-<p>Facebook: Bry Tabiliran</p>
-<p>GitHub: KimBryle</p>
-
-<h3>Contact Form</h3>
-<form onsubmit="sendMessage(event)">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" required></textarea>
-    <button type="submit">Submit</button>
-</form>
-
-</section>
-
-<!-- Portfolio 2 -->
-<section id="portfolio2" style="display:none;">
-
-<h2>Profile</h2>
-<img src="arianne.png" alt="Arianne">
-<h3>Arianne P. Tagudando</h3>
-<p><b>Course:</b> BS Information Technology</p>
-<p>
-I enjoy editing photos and videos and creating templates on Canva.
-</p>
-
-<h2>Skills</h2>
-<ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>SQL</li>
-    <li>Teamwork</li>
-</ul>
-
-<h2>Projects</h2>
-
-<div class="project">
-    <h4>Student Record</h4>
-    <p>Student information management project.</p>
-    <img src="project4.jpg" alt="Project 1">
-    <p><b>Technologies:</b> HTML, CSS, SQL</p>
-</div>
-
-<div class="project">
-    <h4>Online Quiz</h4>
-    <p>Quiz website using HTML, CSS, and JavaScript.</p>
-    <img src="project5.jpg" alt="Project 2">
-    <p><b>Technologies:</b> HTML, CSS, JavaScript</p>
-</div>
-
-<div class="project">
-    <h4>Photo Gallery Website</h4>
-    <p>A website for sharing and organizing edited photos.</p>
-    <img src="project6.jpg" alt="Project 3">
-    <p><b>Technologies:</b> HTML, CSS</p>
-</div>
-
-<h2>Contact</h2>
-<p>Email: ariannetagudando@gmail.com</p>
-<p>Phone: 09987654321</p>
-<p>Facebook: Arianne Tagudando</p>
-<p>GitHub: Arianne</p>
-
-<h3>Contact Form</h3>
-<form onsubmit="sendMessage(event)">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" required></textarea>
-    <button type="submit">Submit</button>
-</form>
-
-</section>
-
-</div>
-
-<script>
-function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    if(user === "admin" && pass === "1234") {
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("portfolioPage").style.display = "block";
-    } else {
-        alert("Wrong username or password!");
-    }
-}
-
-function showPortfolio(id) {
-    document.getElementById("portfolio1").style.display = "none";
-    document.getElementById("portfolio2").style.display = "none";
-    document.getElementById(id).style.display = "block";
-}
-
-function sendMessage(event){
-    event.preventDefault();
-    alert("Message submitted successfully!");
-}
-</script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Kim Bryle P. Tabiliran | BS Information Technology Student</p>
+            <p>Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> by Kim Bryle</p>
+        </div>
+    </footer>
 
 </body>
 </html>
